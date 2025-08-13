@@ -1,0 +1,352 @@
+@import 'tailwindcss';
+
+@view-transition {
+	navigation: auto;
+}
+
+::view-transition-group(main-content) {
+	animation-duration: 1000ms;
+}
+
+::view-transition-old(main-content) {
+	animation-name: slide-left;
+}
+::view-transition-new(main-content) {
+	animation-name: slide-right;
+}
+
+@keyframes slide-right {
+	from {
+		translate: -100% 0;
+		transform: scale(0.5);
+		opacity: 0;
+	}
+}
+@keyframes slide-left {
+	to {
+		translate: -100% 0;
+		transform: scale(0.5);
+		opacity: 0;
+	}
+}
+
+@theme {
+	/* LCARS color */
+	--A-hue: 21.5;
+	--B-hue: 47;
+	--C-hue: 65;
+	--D-hue: 282;
+	--E-hue: 326;
+	--F-hue: 155;
+
+	/* Lightness values */
+	--50-l: 99%;
+	--100-l: 90%;
+	--200-l: 80%;
+	--300-l: 69%;
+	--400-l: 61%;
+	--500-l: 45%;
+	--600-l: 31%;
+	--700-l: 20%;
+	--800-l: 9%;
+	--900-l: 5%;
+
+	/* Chroma values */
+	--50-s: 0.05;
+	--100-s: 0.1;
+	--200-s: 0.19;
+	--300-s: 0.25;
+	--400-s: 0.3;
+	--500-s: 0.23;
+	--600-s: 0.2;
+	--700-s: 0.2;
+	--800-s: 0.18;
+	--900-s: 0.11;
+
+	--color-A-50: oklch(var(--50-l) var(--50-s) var(--A-hue));
+	--color-A-100: oklch(var(--100-l) var(--100-s) var(--A-hue));
+	--color-A-200: oklch(var(--200-l) var(--200-s) var(--A-hue));
+	--color-A-300: oklch(var(--300-l) var(--300-s) var(--A-hue));
+	--color-A-400: oklch(var(--400-l) var(--400-s) var(--A-hue));
+	--color-A-500: oklch(var(--500-l) var(--500-s) var(--A-hue));
+	--color-A-600: oklch(var(--600-l) var(--600-s) var(--A-hue));
+	--color-A-700: oklch(var(--700-l) var(--700-s) var(--A-hue));
+	--color-A-800: oklch(var(--800-l) var(--800-s) var(--A-hue));
+	--color-A-900: oklch(var(--900-l) var(--900-s) var(--A-hue));
+	--color-B-50: oklch(var(--50-l) var(--50-s) var(--B-hue));
+	--color-B-100: oklch(var(--100-l) var(--100-s) var(--B-hue));
+	--color-B-200: oklch(var(--200-l) var(--200-s) var(--B-hue));
+	--color-B-300: oklch(var(--300-l) var(--300-s) var(--B-hue));
+	--color-B-400: oklch(var(--400-l) var(--400-s) var(--B-hue));
+	--color-B-500: oklch(var(--500-l) var(--500-s) var(--B-hue));
+	--color-B-600: oklch(var(--600-l) var(--600-s) var(--B-hue));
+	--color-B-700: oklch(var(--700-l) var(--700-s) var(--B-hue));
+	--color-B-800: oklch(var(--800-l) var(--800-s) var(--B-hue));
+	--color-B-900: oklch(var(--900-l) var(--900-s) var(--B-hue));
+	--color-C-50: oklch(var(--50-l) var(--50-s) var(--C-hue));
+	--color-C-100: oklch(var(--100-l) var(--100-s) var(--C-hue));
+	--color-C-200: oklch(var(--200-l) var(--200-s) var(--C-hue));
+	--color-C-300: oklch(var(--300-l) var(--300-s) var(--C-hue));
+	--color-C-400: oklch(var(--400-l) var(--400-s) var(--C-hue));
+	--color-C-500: oklch(var(--500-l) var(--500-s) var(--C-hue));
+	--color-C-600: oklch(var(--600-l) var(--600-s) var(--C-hue));
+	--color-C-700: oklch(var(--700-l) var(--700-s) var(--C-hue));
+	--color-C-800: oklch(var(--800-l) var(--800-s) var(--C-hue));
+	--color-C-900: oklch(var(--900-l) var(--900-s) var(--C-hue));
+	--color-D-50: oklch(var(--50-l) var(--50-s) var(--D-hue));
+	--color-D-100: oklch(var(--100-l) var(--100-s) var(--D-hue));
+	--color-D-200: oklch(var(--200-l) var(--200-s) var(--D-hue));
+	--color-D-300: oklch(var(--300-l) var(--300-s) var(--D-hue));
+	--color-D-400: oklch(var(--400-l) var(--400-s) var(--D-hue));
+	--color-D-500: oklch(var(--500-l) var(--500-s) var(--D-hue));
+	--color-D-600: oklch(var(--600-l) var(--600-s) var(--D-hue));
+	--color-D-700: oklch(var(--700-l) var(--700-s) var(--D-hue));
+	--color-D-800: oklch(var(--800-l) var(--800-s) var(--D-hue));
+	--color-D-900: oklch(var(--900-l) var(--900-s) var(--D-hue));
+	--color-E-50: oklch(var(--50-l) var(--50-s) var(--E-hue));
+	--color-E-100: oklch(var(--100-l) var(--100-s) var(--E-hue));
+	--color-E-200: oklch(var(--200-l) var(--200-s) var(--E-hue));
+	--color-E-300: oklch(var(--300-l) var(--300-s) var(--E-hue));
+	--color-E-400: oklch(var(--400-l) var(--400-s) var(--E-hue));
+	--color-E-500: oklch(var(--500-l) var(--500-s) var(--E-hue));
+	--color-E-600: oklch(var(--600-l) var(--600-s) var(--E-hue));
+	--color-E-700: oklch(var(--700-l) var(--700-s) var(--E-hue));
+	--color-E-800: oklch(var(--800-l) var(--800-s) var(--E-hue));
+	--color-E-900: oklch(var(--900-l) var(--900-s) var(--E-hue));
+	--color-F-50: oklch(var(--50-l) var(--50-s) var(--F-hue));
+	--color-F-100: oklch(var(--100-l) var(--100-s) var(--F-hue));
+	--color-F-200: oklch(var(--200-l) var(--200-s) var(--F-hue));
+	--color-F-300: oklch(var(--300-l) var(--300-s) var(--F-hue));
+	--color-F-400: oklch(var(--400-l) var(--400-s) var(--F-hue));
+	--color-F-500: oklch(var(--500-l) var(--500-s) var(--F-hue));
+	--color-F-600: oklch(var(--600-l) var(--600-s) var(--F-hue));
+	--color-F-700: oklch(var(--700-l) var(--700-s) var(--F-hue));
+	--color-F-800: oklch(var(--800-l) var(--800-s) var(--F-hue));
+	--color-F-900: oklch(var(--900-l) var(--900-s) var(--F-hue));
+
+	--color-A: var(--color-A-200);
+	--color-B: var(--color-B-200);
+	--color-C: var(--color-C-200);
+	--color-D: var(--color-D-200);
+	--color-E: var(--color-E-200);
+	--color-F: var(--color-F-200);
+	--color-white: var(--color-F-100);
+	--color-black: var(--color-A-900);
+
+	--font-oxanium: oxanium, 'sans-serif';
+	--font-teko: teko, 'sans-serif';
+}
+
+html,
+body {
+	@apply w-full h-full bg-black text-white scroll-smooth overflow-hidden font-oxanium font-light tracking-widest leading-6;
+}
+
+@utility page-title {
+	@apply text-3xl md:text-7xl xl:text-[8rem] uppercase font-teko tracking-[0.7rem];
+}
+
+@layer components {
+	main {
+		@apply absolute top-[28dvh] right-[2dvw] w-[82dvw] h-[63dvh] max-h-[63dvh] flex flex-row gap-[2dvw] overflow-auto;
+		view-transition-name: main-content;
+	}
+	section {
+		@apply w-full h-full flex grow justify-between items-start gap-8 bg-F/5 p-4 rounded-xl border-F/25 border-2;
+	}
+	p,
+	b,
+	span {
+		@apply text-base font-oxanium;
+	}
+	b {
+		@apply font-bold;
+	}
+	nav {
+		@apply absolute left-[0dvw] top-[37dvh] w-[10dvw] h-[46dvh] flex flex-col gap-[1rem] items-center;
+		.nav__link {
+			@apply w-full relative grow flex justify-center items-center text-white/80 font-bold text-lg xl:text-2xl cursor-pointer hover:text-F-50/100 hover:underline transition-all duration-300;
+			.nav__link-child {
+				@apply w-full h-full flex items-center justify-center;
+			}
+			.nav__arrow {
+				position: absolute;
+				top: 0;
+				right: -1rem;
+				width: 1rem;
+				height: 100%;
+				clip-path: polygon(0 0, 0 50%, 0 100%);
+				transition: clip-path 0.3s ease-in-out;
+				&.active {
+					clip-path: polygon(0 0, 100% 50%, 0 100%);
+				}
+			}
+		}
+	}
+}
+
+.card {
+	@apply flex flex-col justify-start gap-2 xl:gap-4;
+	.card__header {
+		@apply w-full h-auto pb-4 border-b border-F/25 flex flex-row justify-between items-center;
+		.card__title {
+			@apply flex flex-row items-center gap-2;
+			h3 {
+				@apply text-2xl tracking-[.2rem] font-teko font-bold uppercase;
+			}
+			.card__sub-head {
+				@apply text-sm text-F/50 font-oxanium;
+			}
+		}
+		.card__right-items {
+			@apply flex flex-col text-sm text-F/30 text-right;
+		}
+	}
+	.card__body {
+		@apply text-base font-oxanium h-[calc(100%-3rem)] w-full overflow-y-auto overscroll-none scroll-smooth;
+	}
+}
+
+#bio {
+	.bio__image {
+		@apply w-1/2 h-fit rounded-lg border-2 border-F/25 grayscale-80;
+	}
+	.bio__info {
+		@apply flex flex-col justify-between w-full h-auto;
+	}
+	.bio__line {
+		@apply flex justify-between align-middle lg:flex-col lg:text-right p-2;
+		p {
+			@apply text-right;
+		}
+	}
+	.bio__divider {
+		@apply border-t-2 border-dotted border-F/25;
+	}
+}
+
+#skills {
+	.skills__actions {
+		@apply flex flex-row justify-around items-center gap-4;
+		.skill__action {
+			@apply flex flex-row items-center gap-4;
+			label {
+				@apply text-F/50 text-sm font-bold uppercase tracking-widest;
+				&:hover {
+					@apply text-F/80;
+				}
+			}
+			select {
+				@apply w-full h-full p-1 bg-F/10 border-2 border-F/20 text-F/50 font-bold uppercase tracking-widest cursor-pointer;
+				&:focus {
+					@apply border-F/50 outline-none;
+				}
+				option {
+					@apply text-F/50;
+				}
+			}
+		}
+	}
+	.skill {
+		@apply my-2;
+		.skill__label {
+		}
+		.skill__container {
+			@apply w-full bg-F/25 p-1  mask-clip-padding;
+		}
+		.skill__bar {
+			@apply py-2 px-4 text-right opacity-80;
+		}
+		.skill__percent {
+			@apply opacity-100 text-shadow-sm font-bold text-F-50/100;
+		}
+	}
+}
+
+#history {
+	.history__card {
+		.history__list {
+			@apply w-[calc(100%-1rem)] h-full flex flex-col justify-between gap-4 list-disc list-outside ml-4;
+			.history__item {
+				@apply text-base tracking-wide;
+			}
+		}
+	}
+}
+
+#projects {
+	.project__card {
+		.project__link {
+			@apply text-F/50 underline decoration-F/20 underline-offset-2 hover:text-F-50/100 transition-all duration-300;
+		}
+		.project__body {
+			@apply flex flex-col items-center xl:flex-row xl:justify-between gap-4;
+			.project__image {
+				@apply w-full h-auto xl:w-1/2;
+			}
+			.project__description {
+				@apply w-full h-auto xl:w-1/2;
+			}
+		}
+	}
+}
+
+form {
+	@apply w-full h-full grid grid-rows-[5fr_5fr_2fr] lg:grid-rows-[5fr_1fr] grid-cols-[1fr] lg:grid-cols-2 gap-4 lg:gap-8;
+	.contact__inputs {
+		@apply w-full h-full flex flex-col justify-between col-span-1;
+		.contact__group {
+			@apply justify-center first:justify-start last:justify-end;
+		}
+	}
+	.contact__area {
+		@apply w-full h-full col-span-1;
+		textarea {
+			@apply h-full resize-none;
+		}
+	}
+	.contact__group {
+		@apply w-full h-full flex flex-col gap-2;
+		input,
+		textarea {
+			@apply w-full py-1 px-2 border-2 border-F/20 bg-F/10 focus:outline-none;
+
+			&:user-valid {
+				@apply border-F/50;
+			}
+			&:user-invalid {
+				@apply border-A/50;
+			}
+			&:focus:invalid {
+				@apply border-B/50;
+			}
+		}
+
+		&.error {
+			@apply text-A/80;
+			input,
+			textarea {
+				@apply border-A/50;
+			}
+		}
+		.error-message {
+			@apply text-A/50 text-sm;
+		}
+	}
+
+	.contact__actions {
+		@apply py-4 col-span-1 lg:col-start-2 h-full flex items-center;
+		.contact__button {
+			@apply w-full h-full bg-F/20 border-2 border-F/25 text-F/50 font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer;
+			&.loading {
+				@apply cursor-not-allowed opacity-50;
+			}
+			&:hover {
+				@apply bg-F/30;
+			}
+			&:active {
+				@apply bg-F/40;
+			}
+		}
+	}
+}
