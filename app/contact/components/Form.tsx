@@ -33,7 +33,7 @@ const Form = () => {
 		}
 	};
 
-	// if (isSubmitSuccessful) return <Sent />;
+	if (isSubmitSuccessful) return <Sent />;
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} method='POST'>
 			<div className='contact__inputs'>

@@ -1,10 +1,10 @@
-import { skillCategories, skillSorts } from '@/app/_constants';
+import { skillCategories, skillsArr, skillSorts } from '@/app/_constants';
 import { SkillCat, SkillType } from '@/app/_types';
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type SkillActionsProps = {
 	sortedSkills: SkillType[];
-	setSortedSkills: Dispatch<SetStateAction<SkillType[]>>;
+	setSortedSkills: (skillArr: SkillType[]) => void;
 };
 
 const SkillActions = ({ sortedSkills, setSortedSkills }: SkillActionsProps) => {
@@ -12,7 +12,7 @@ const SkillActions = ({ sortedSkills, setSortedSkills }: SkillActionsProps) => {
 	const [sort, setSort] = useState<keyof SkillType>('percent');
 
 	useEffect(() => {
-		const filteredArr = [...sortedSkills].filter(skl => {
+		const filteredArr = [...skillsArr].filter(skl => {
 			if (!filter || filter === 'None') return skl;
 			return skl.categories.indexOf(filter) > -1;
 		});
@@ -29,7 +29,7 @@ const SkillActions = ({ sortedSkills, setSortedSkills }: SkillActionsProps) => {
 			return 0;
 		});
 		setSortedSkills(sortedArr);
-	}, [sort]);
+	}, [sort, skillsArr]);
 
 	return (
 		<div className='skills__actions'>

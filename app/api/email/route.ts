@@ -5,7 +5,7 @@ import React from 'react';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
 	const { name, email, message, company } = contactSchema.parse(await req.formData());
 	console.log({ name, email, message, company });
 	try {
