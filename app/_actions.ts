@@ -2,7 +2,6 @@
 
 import { ContactFormFields, contactSchema } from '@/app/_lib/types';
 import { Resend } from 'resend';
-import React from 'react';
 import ContactTemplate from './_components/emails/contact-template';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
