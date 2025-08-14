@@ -1,4 +1,3 @@
-import { ContactFormFields } from '@/app/_lib/types';
 import { Body, Container, Font, Head, Heading, Hr, Html, Img, Link, pixelBasedPreset, Preview, Row, Section, Tailwind, Text } from '@react-email/components';
 
 const env = process.env.NEXT_PUBLIC_VERCEL_ENV;
