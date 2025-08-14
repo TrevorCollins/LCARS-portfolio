@@ -7,21 +7,21 @@ const portfolio = [
 	{
 		id: 1,
 		description: 'A simple portfolio website for the best photographer in Kansas City (my wife).',
-		url: 'https://gracesnyderdesign.com',
+		url: 'https://gracesnyder.com',
 		title: `Grace's Portfolio`,
 		linkColor: 'text-tcPurple',
 	},
 	{
 		id: 2,
 		description: 'A business/portfolio website for a violin maker in Pittsburgh, PA. Still under construction.',
-		url: 'https://costar-steel.vercel.app/',
+		url: 'https://gregorybtracy.com',
 		title: `Greg's Portfolio`,
 		linkColor: 'text-tcOrange',
 	},
 	{
 		id: 3,
 		description: `How many movies have Christopher Guest and Michael McKean been in together? Find out in this fun little app (my experimentation with 'vibe coding').`,
-		url: 'https://gracesnyderdesign.com',
+		url: 'https://costar-steel.vercel.app/',
 		title: `Costars`,
 		linkColor: 'text-tcRed',
 	},
@@ -52,7 +52,7 @@ export default function ContactTemplate({ name, company }: ContactTemplateProps)
 					},
 				}}
 			>
-				<Preview>Hello from Trevor Collins</Preview>
+				<Preview>A frontend developer and minor Star Trek fan.</Preview>
 				<Head>
 					<Font
 						fontFamily='Gemunu Libre'
