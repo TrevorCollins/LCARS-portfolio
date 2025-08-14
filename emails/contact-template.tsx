@@ -1,7 +1,7 @@
-import { Body, Container, Font, Head, Heading, Hr, Html, Img, Link, pixelBasedPreset, Preview, Row, Section, Tailwind, Text } from '@react-email/components';
+import { Body, Column, Container, Font, Head, Heading, Hr, Html, Img, Link, pixelBasedPreset, Preview, Row, Section, Tailwind, Text } from '@react-email/components';
 
 const env = process.env.NEXT_PUBLIC_VERCEL_ENV;
-const baseUrl = env === 'production' ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:3000';
+const baseUrl = env === 'production' ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}` : '';
 
 const portfolio = [
 	{
@@ -27,39 +27,14 @@ const portfolio = [
 	},
 ];
 
-const links = [
-	{
-		title: 'GitHub',
-		href: 'https://github.com/TrevorCollins',
-		icon: `${baseUrl}/github.png`,
-	},
-	{
-		title: 'LinkedIn',
-		href: 'https://linkedin.com/in/trevor50d',
-		icon: `${baseUrl}/linkedin.png`,
-	},
-];
+type ContactTemplateProps = {
+	name: string;
+	company?: string;
+};
 
-export default function ContactTemplate({ name, company }: { name: string; company?: string }) {
+export default function ContactTemplate({ name, company }: ContactTemplateProps) {
 	return (
 		<Html>
-			<Head>
-				<Font
-					fontFamily='Gemunu Libre'
-					fallbackFontFamily='Verdana'
-					webFont={{ url: 'https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400&display=swap', format: 'truetype' }}
-					fontStyle='normal'
-					fontWeight={400}
-				/>
-				<Font
-					fontFamily='Gemunu Libre'
-					fallbackFontFamily='Verdana'
-					webFont={{ url: 'https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@800&display=swap', format: 'truetype' }}
-					fontStyle='normal'
-					fontWeight={800}
-				/>
-				<title>Hello, {name}!</title>
-			</Head>
 			<Tailwind
 				config={{
 					presets: [pixelBasedPreset],
@@ -78,12 +53,29 @@ export default function ContactTemplate({ name, company }: { name: string; compa
 				}}
 			>
 				<Preview>Hello from Trevor Collins</Preview>
-				<Body className='w-xl mx-auto'>
+				<Head>
+					<Font
+						fontFamily='Gemunu Libre'
+						fallbackFontFamily='Verdana'
+						webFont={{ url: 'https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400&display=swap', format: 'truetype' }}
+						fontStyle='normal'
+						fontWeight={400}
+					/>
+					<Font
+						fontFamily='Gemunu Libre'
+						fallbackFontFamily='Verdana'
+						webFont={{ url: 'https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@800&display=swap', format: 'truetype' }}
+						fontStyle='normal'
+						fontWeight={800}
+					/>
+					<title>{`Hello, ${name}!`}</title>
+				</Head>
+				<Body className='max-w-[500px] px-4 pb-4'>
 					<Heading className='w-full mx-auto tracking-widest leading-8'>
 						Hello, <span className='text-tcBlue'>{name}</span>!
 					</Heading>
 					<Hr />
-					<Container className='w-full h-full bg-tcBlack text-tcWhite px-10 py-5'>
+					<Container className='w-full bg-tcBlack text-tcWhite px-10 py-5 my-6'>
 						<Section>
 							<Row>
 								<Text className='text-lg tracking-wide'>Thank you so much for reaching out. I will respond as soon as possible.</Text>
@@ -91,11 +83,11 @@ export default function ContactTemplate({ name, company }: { name: string; compa
 							</Row>
 						</Section>
 						<Section>
-							<ul className='w-4/5 mx-auto flex flex-col justify-between gap-4 llist-disc list-outside'>
+							<ul className='px-4 list-disc'>
 								{portfolio.map(project => (
 									<li key={project.id}>
-										<Link href={project.url} className={`${project.linkColor} text-xl tracking-widest font-extrabold`}>
-											{project.title}
+										<Link href={project.url} className={`${project.linkColor} text-xl tracking-widest font-extrabold border-2 border-tcWhite`}>
+											<span className=''>{project.title}</span>
 										</Link>
 										<br />
 										{project.description}
@@ -110,16 +102,20 @@ export default function ContactTemplate({ name, company }: { name: string; compa
 						</Section>
 					</Container>
 					<Hr />
-					<Text className='text-xl tracking-widest'>Live long and prosper 🖖,</Text>
-					<br />
+					<Text className='text-xl tracking-widest mt-5'>Live long and prosper 🖖,</Text>
 					<Text className='text-xl tracking-widest'>Trevor Collins</Text>
-					<Section>
-						<Row className='w-1/2 mt-10 text-black/70 flex justify-around'>
-							{links.map((link, idx) => (
-								<Link key={idx} href={link.href}>
-									<Img src={link.icon} alt={link.title} width={20} height={20} className='bg-black bg-clip-content' />
+					<Section className='w-[150px] mx-auto'>
+						<Row>
+							<Column align='left'>
+								<Link href='https://github.com/TrevorCollins'>
+									<Img src={`${baseUrl}/static/github.png`} alt='github' width={40} height={40} />
 								</Link>
-							))}
+							</Column>
+							<Column align='right'>
+								<Link href='https://www.linkedin.com/in/trevor50d/'>
+									<Img src={`${baseUrl}/static/linkedin.png`} alt='linkedIn' width={40} height={40} />
+								</Link>
+							</Column>
 						</Row>
 					</Section>
 				</Body>
@@ -127,3 +123,8 @@ export default function ContactTemplate({ name, company }: { name: string; compa
 		</Html>
 	);
 }
+
+ContactTemplate.PreviewProps = {
+	name: 'Test Name',
+	company: 'Checking LLC',
+} as ContactTemplateProps;
