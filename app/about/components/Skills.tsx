@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { skillsArr } from '../../_constants';
+import { skillsArr } from '../../_lib/constants';
 import { Skill } from './Skill';
-import { SkillType } from '@/app/_types';
+import { SkillType } from '@/app/_lib/types';
 import Card from '@/app/_components/Card';
 import SkillActions from './SkillActions';
 

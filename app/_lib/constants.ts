@@ -1,4 +1,4 @@
-import type { JobType, NavLinkType, ProjectType, SkillType } from '../_types';
+import type { JobType, NavLinkType, ProjectType, SkillType } from './types';
 import GregTracyViolins from '../../public/images/projects/greg-tracy-violins.webp';
 import Costar from '../../public/images/projects/costar.webp';
 import GracePortfolio from '../../public/images/projects/grace-portfolio.webp';
@@ -207,7 +207,7 @@ export const projects: ProjectType[] = [
 	{
 		id: 'costar',
 		name: 'Costar',
-		url: 'https://costar.com',
+		url: 'https://costar-steel.vercel.app/',
 		repo: 'costar',
 		thumbnail: Costar,
 		description:
@@ -238,7 +238,7 @@ export const socialLinks = [
 		icon: '/images/github.png',
 	},
 	{
-		url: 'www.linkedin.com/in/trevor50d',
+		url: 'https://linkedin.com/in/trevor50d',
 		title: 'LinkedIn',
 		icon: '/images/linkedin.png',
 	},

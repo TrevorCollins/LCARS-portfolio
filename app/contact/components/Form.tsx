@@ -3,7 +3,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import Sent from './Sent';
-import { ContactFormFields, contactSchema } from '@/app/_types';
+import { ContactFormFields, contactSchema } from '@/app/_lib/types';
+import { sendEmail } from '@/app/_actions';
 
 const initValues = {
 	name: '',
@@ -16,24 +17,23 @@ const Form = () => {
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors, isSubmitting, isSubmitSuccessful },
 	} = useForm<ContactFormFields>({ defaultValues: initValues, resolver: zodResolver(contactSchema) });
 
 	const onSubmit: SubmitHandler<ContactFormFields> = async formData => {
-		try {
-			const { name, email, company, message } = formData;
-			const payload = { name, email, company, message };
+		const result = await sendEmail(formData);
 
-			await fetch('/api/email', {
-				method: 'POST',
-				body: JSON.stringify(payload),
-			});
-		} catch (e) {
-			console.log({ e });
+		if (result.success) {
+			console.log({ data: result.data });
+			reset();
+			return;
 		}
+
+		console.log(result.error);
 	};
 
-	if (isSubmitSuccessful) return <Sent />;
+	// if (isSubmitSuccessful) return <Sent />;
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} method='POST'>
 			<div className='contact__inputs'>

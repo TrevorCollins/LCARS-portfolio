@@ -1,4 +1,4 @@
-import { SkillType } from '@/app/_types';
+import { SkillType } from '@/app/_lib/types';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import { gsap } from 'gsap';

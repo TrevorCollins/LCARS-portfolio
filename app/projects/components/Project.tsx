@@ -1,5 +1,5 @@
 import Card from '@/app/_components/Card';
-import { ProjectType } from '@/app/_types';
+import { ProjectType } from '@/app/_lib/types';
 import Image from 'next/image';
 
 const Project = ({ id, name, url, repo, thumbnail, description }: ProjectType) => {

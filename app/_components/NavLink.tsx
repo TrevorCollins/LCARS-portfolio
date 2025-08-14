@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { navColorClasses } from '../_constants';
-import { NavLinkType } from '../_types';
+import { navColorClasses } from '../_lib/constants';
+import { NavLinkType } from '../_lib/types';
 import { usePathname } from 'next/navigation';
 
 const NavCon = ({ path, label, color }: NavLinkType) => {

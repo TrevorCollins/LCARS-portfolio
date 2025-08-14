@@ -1,4 +1,4 @@
-import { workHistory } from '../_constants';
+import { workHistory } from '../_lib/constants';
 import Card from '../_components/Card';
 
 const Timeline = () => {

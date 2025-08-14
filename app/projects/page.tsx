@@ -1,4 +1,4 @@
-import { projects } from '../_constants';
+import { projects } from '../_lib/constants';
 import Project from './components/Project';
 
 const Projects = () => {

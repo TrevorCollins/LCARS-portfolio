@@ -1,5 +1,5 @@
 import Card from '@/app/_components/Card';
-import { bioCopy } from '../../_constants';
+import { bioCopy } from '../../_lib/constants';
 import Image from 'next/image';
 import ProfileImage from '../../../public/images/profile.jpeg';
 

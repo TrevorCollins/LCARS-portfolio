@@ -1,4 +1,4 @@
-import { contactSchema } from '@/app/_types';
+import { contactSchema } from '@/app/_lib/types';
 import { Resend } from 'resend';
 import { ContactTemplate } from '@/app/_components/emails/contact-template';
 import React from 'react';
@@ -22,6 +22,7 @@ export async function POST(req: Request) {
 
 		return Response.json(data);
 	} catch (error) {
+		console.error('Error:', error);
 		return Response.json({ error }, { status: 500 });
 	}
 }

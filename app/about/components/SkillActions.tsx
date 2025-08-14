@@ -1,5 +1,5 @@
-import { skillCategories, skillsArr, skillSorts } from '@/app/_constants';
-import { SkillCat, SkillType } from '@/app/_types';
+import { skillCategories, skillsArr, skillSorts } from '@/app/_lib/constants';
+import { SkillCat, SkillType } from '@/app/_lib/types';
 import { useEffect, useState } from 'react';
 
 type SkillActionsProps = {
