@@ -3,7 +3,11 @@ import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import { gsap } from 'gsap';
 
-export const Skill = ({ label, percent, color }: { color: string } & SkillType) => {
+export const Skill = ({
+	label,
+	percent,
+	color,
+}: { color: string } & SkillType) => {
 	const skillRef = useRef<HTMLDivElement>(null);
 	useGSAP(
 		() => {
@@ -31,11 +35,14 @@ export const Skill = ({ label, percent, color }: { color: string } & SkillType) 
 		E: 'bg-E',
 	};
 	return (
-		<div ref={skillRef} className='skill'>
-			<p className='skill__label'>{label}</p>
-			<div className='skill__container'>
-				<div className={`skill__bar ${colorClasses[color]}`} style={{ width: `${percent}%` }}>
-					<span className='skill__percent'>{percent}%</span>
+		<div ref={skillRef} className="skill">
+			<p className="skill__label">{label}</p>
+			<div className="skill__container">
+				<div
+					className={`skill__bar ${colorClasses[color]}`}
+					style={{ width: `${percent}%` }}
+				>
+					<span className="skill__percent">{percent}%</span>
 				</div>
 			</div>
 		</div>

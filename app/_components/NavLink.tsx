@@ -8,7 +8,9 @@ import { usePathname } from 'next/navigation';
 const NavCon = ({ path, label, color }: NavLinkType) => {
 	const currentPath = usePathname();
 	const isActive = currentPath === path;
-	const spanClasses = isActive ? 'active' : '';
+	const spanClasses = isActive
+		? `active ${navColorClasses[color].active}`
+		: navColorClasses[color].bg;
 	// function flipSection() {
 	// 	const state = Flip.getState('section');
 	// 	Flip.from(state, {
@@ -21,9 +23,15 @@ const NavCon = ({ path, label, color }: NavLinkType) => {
 	// 	});
 	// }
 	return (
-		<Link className={`nav__link ${navColorClasses[color]}`} href={path} prefetch>
-			<div className={`nav__link-child ${isActive ? `${navColorClasses[color].active} underline text-F-50/100` : navColorClasses[color].bg}`}>
-				<span className={`nav__arrow ${spanClasses} ${navColorClasses[color].active}`} />
+		<Link
+			className={`nav__link ${navColorClasses[color]}`}
+			href={path}
+			prefetch
+		>
+			<div
+				className={`nav__link-child ${isActive ? `${navColorClasses[color].active} text-F-50/100 underline` : navColorClasses[color].bg}`}
+			>
+				<span className={`nav__arrow ${spanClasses}`} />
 				{label}
 			</div>
 		</Link>

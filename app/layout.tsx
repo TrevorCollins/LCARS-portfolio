@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import Header from './_components/Header';
-import { LCARSBody } from './_components/LcarsSVG';
-import NavCon from './_components/NavCon';
 import Space from './_components/Space';
+import LCARS from './_components/LCARS';
 
 const oxanium = localFont({
 	src: [
@@ -34,16 +33,15 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en'>
+		<html lang="en">
 			<body className={`${oxanium.variable} ${teko.variable} antialiased`}>
 				<Space />
-				<div className='fixed top-0 left-[2dvw] w-[98dvw] h-[100dvh]'>
+				<div className="fixed left-[2dvw] top-0 h-[98dvh] w-[96dvw] md:w-[98dvw]">
+					<LCARS />
 					<Header />
-					<div className='w-full h-[80dvh] pt-4'>
-						<LCARSBody />
-						<NavCon />
-						<main className='main-content'>{children}</main>
-					</div>
+					<main className="absolute right-[3dvw] top-[20dvh] flex h-[67dvh] w-[90dvw] flex-row gap-[2dvw] overflow-auto md:right-[2dvw] md:top-[29dvh] md:h-[60dvh]">
+						{children}
+					</main>
 				</div>
 			</body>
 		</html>

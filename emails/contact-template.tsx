@@ -1,19 +1,41 @@
-import { Body, Column, Container, Font, Head, Heading, Hr, Html, Img, Link, pixelBasedPreset, Preview, Row, Section, Tailwind, Text } from '@react-email/components';
+import {
+	Body,
+	Column,
+	Container,
+	Font,
+	Head,
+	Heading,
+	Hr,
+	Html,
+	Img,
+	Link,
+	pixelBasedPreset,
+	Preview,
+	Row,
+	Section,
+	Tailwind,
+	Text,
+} from '@react-email/components';
 
 const env = process.env.NEXT_PUBLIC_VERCEL_ENV;
-const baseUrl = env === 'production' ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}` : '';
+const baseUrl =
+	env === 'production'
+		? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}`
+		: '';
 
 const portfolio = [
 	{
 		id: 1,
-		description: 'A simple portfolio website for the best photographer in Kansas City (my wife).',
+		description:
+			'A simple portfolio website for the best photographer in Kansas City (my wife).',
 		url: 'https://gracesnyder.com',
 		title: `Grace's Portfolio`,
 		linkColor: 'text-tcPurple',
 	},
 	{
 		id: 2,
-		description: 'A business/portfolio website for a violin maker in Pittsburgh, PA. Still under construction.',
+		description:
+			'A business/portfolio website for a violin maker in Pittsburgh, PA. Still under construction.',
 		url: 'https://gregorybtracy.com',
 		title: `Greg's Portfolio`,
 		linkColor: 'text-tcOrange',
@@ -32,7 +54,10 @@ type ContactTemplateProps = {
 	company?: string;
 };
 
-export default function ContactTemplate({ name, company }: ContactTemplateProps) {
+export default function ContactTemplate({
+	name,
+	company,
+}: ContactTemplateProps) {
 	return (
 		<Html>
 			<Tailwind
@@ -55,65 +80,97 @@ export default function ContactTemplate({ name, company }: ContactTemplateProps)
 				<Preview>A frontend developer and minor Star Trek fan.</Preview>
 				<Head>
 					<Font
-						fontFamily='Gemunu Libre'
-						fallbackFontFamily='Verdana'
-						webFont={{ url: 'https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400&display=swap', format: 'truetype' }}
-						fontStyle='normal'
+						fontFamily="Gemunu Libre"
+						fallbackFontFamily="Verdana"
+						webFont={{
+							url: 'https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400&display=swap',
+							format: 'truetype',
+						}}
+						fontStyle="normal"
 						fontWeight={400}
 					/>
 					<Font
-						fontFamily='Gemunu Libre'
-						fallbackFontFamily='Verdana'
-						webFont={{ url: 'https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@800&display=swap', format: 'truetype' }}
-						fontStyle='normal'
+						fontFamily="Gemunu Libre"
+						fallbackFontFamily="Verdana"
+						webFont={{
+							url: 'https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@800&display=swap',
+							format: 'truetype',
+						}}
+						fontStyle="normal"
 						fontWeight={800}
 					/>
 					<title>{`Hello, ${name}!`}</title>
 				</Head>
-				<Body className='max-w-[500px] px-4 pb-4'>
-					<Heading className='w-full mx-auto tracking-widest leading-8'>
-						Hello, <span className='text-tcBlue'>{name}</span>!
+				<Body className="max-w-[500px] px-4 pb-4">
+					<Heading className="mx-auto w-full leading-8 tracking-widest">
+						Hello, <span className="text-tcBlue">{name}</span>!
 					</Heading>
 					<Hr />
-					<Container className='w-full bg-tcBlack text-tcWhite px-10 py-5 my-6'>
+					<Container className="bg-tcBlack text-tcWhite my-6 w-full px-10 py-5">
 						<Section>
 							<Row>
-								<Text className='text-lg tracking-wide'>Thank you so much for reaching out. I will respond as soon as possible.</Text>
-								<Text className='text-lg tracking-wide'>In the meantime, feel free to check out my gitHub or any of my other projects linked below.</Text>
+								<Text className="text-lg tracking-wide">
+									Thank you so much for reaching out. I will respond as soon as
+									possible.
+								</Text>
+								<Text className="text-lg tracking-wide">
+									In the meantime, feel free to check out my gitHub or any of my
+									other projects linked below.
+								</Text>
 							</Row>
 						</Section>
 						<Section>
-							<ul className='px-4 list-disc'>
-								{portfolio.map(project => (
+							<ul className="list-disc px-4">
+								{portfolio.map((project) => (
 									<li key={project.id}>
-										<Link href={project.url} className={`${project.linkColor} text-xl tracking-widest font-extrabold border-2 border-tcWhite`}>
-											<span className=''>{project.title}</span>
+										<Link
+											href={project.url}
+											className={`${project.linkColor} text-xl font-extrabold tracking-widest`}
+										>
+											<span className="">{project.title}</span>
 										</Link>
 										<br />
-										{project.description}
+										<Text className="text-base text-white">
+											{project.description}
+										</Text>
 									</li>
 								))}
 							</ul>
 						</Section>
 						<Section>
 							<Row>
-								<Text className='text-lg tracking-wide'>If there is anything I can do for you{company ? ` or ${company}` : ''}, please let me know.</Text>
+								<Text className="text-lg tracking-wide">
+									If there is anything I can do for you
+									{company ? ` or ${company}` : ''}, please let me know.
+								</Text>
 							</Row>
 						</Section>
 					</Container>
 					<Hr />
-					<Text className='text-xl tracking-widest mt-5'>Live long and prosper 🖖,</Text>
-					<Text className='text-xl tracking-widest'>Trevor Collins</Text>
-					<Section className='w-[150px] mx-auto'>
+					<Text className="mt-5 text-xl tracking-widest">
+						Live long and prosper 🖖,
+					</Text>
+					<Text className="text-xl tracking-widest">Trevor Collins</Text>
+					<Section className="mx-auto w-[150px]">
 						<Row>
-							<Column align='left'>
-								<Link href='https://github.com/TrevorCollins'>
-									<Img src={`${baseUrl}/static/github.png`} alt='github' width={40} height={40} />
+							<Column align="left">
+								<Link href="https://github.com/TrevorCollins">
+									<Img
+										src={`${baseUrl}/static/github.png`}
+										alt="github"
+										width={40}
+										height={40}
+									/>
 								</Link>
 							</Column>
-							<Column align='right'>
-								<Link href='https://www.linkedin.com/in/trevor50d/'>
-									<Img src={`${baseUrl}/static/linkedin.png`} alt='linkedIn' width={40} height={40} />
+							<Column align="right">
+								<Link href="https://www.linkedin.com/in/trevor50d/">
+									<Img
+										src={`${baseUrl}/static/linkedin.png`}
+										alt="linkedIn"
+										width={40}
+										height={40}
+									/>
 								</Link>
 							</Column>
 						</Row>

@@ -1,6 +1,6 @@
 const Footer = () => {
 	return (
-		<footer className='tc-footer'>
+		<footer className="tc-footer">
 			<h1>Footer</h1>
 		</footer>
 	);

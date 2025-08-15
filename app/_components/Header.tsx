@@ -1,11 +1,17 @@
-import { LCARSHeader } from './LcarsSVG';
-
 const Header = () => {
 	return (
-		<header className='w-full h-[18%]'>
-			<LCARSHeader />
-			<div className='absolute top-0 right-0 w-[82dvw] h-[10dvh] flex items-center justify-end text-C-300 opacity-80 pe-8'>
-				<h1 className='page-title'>Trevor Collins</h1>
+		<header className="absolute right-0 top-0 h-[10dvh] w-full px-[1dvw] py-[1dvh] md:w-[88dvw]">
+			<div className="text-C-300 flex h-full w-full items-center justify-center opacity-80 md:justify-end">
+				<h1 className="flex w-full flex-row justify-around">
+					{'Trevor Collins'.split('').map((letter, idx) => (
+						<span
+							className="font-teko text-5xl font-extrabold uppercase md:text-7xl xl:text-[8rem]"
+							key={idx}
+						>
+							{letter}
+						</span>
+					))}
+				</h1>
 			</div>
 		</header>
 	);

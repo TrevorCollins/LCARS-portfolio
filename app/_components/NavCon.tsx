@@ -4,7 +4,7 @@ import NavLink from './NavLink';
 const NavCon = () => {
 	return (
 		<nav>
-			{navLinks.map(link => (
+			{navLinks.map((link) => (
 				<NavLink key={link.id} {...link} />
 			))}
 		</nav>

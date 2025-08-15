@@ -139,35 +139,30 @@
 
 html,
 body {
-	@apply w-full h-full bg-black text-white scroll-smooth overflow-hidden font-oxanium font-light tracking-widest leading-6;
-}
-
-@utility page-title {
-	@apply text-3xl md:text-7xl xl:text-[8rem] uppercase font-teko tracking-[0.7rem];
+	@apply font-oxanium h-full w-full overflow-hidden scroll-smooth bg-black font-light leading-6 tracking-widest text-white;
 }
 
 @layer components {
 	main {
-		@apply absolute top-[28dvh] right-[2dvw] w-[82dvw] h-[63dvh] max-h-[63dvh] flex flex-row gap-[2dvw] overflow-auto;
 		view-transition-name: main-content;
 	}
 	section {
-		@apply w-full h-full flex grow justify-between items-start gap-8 bg-F/5 p-4 rounded-xl border-F/25 border-2;
+		@apply bg-F/5 border-F/25 flex h-full w-full grow items-start justify-between gap-8 rounded-xl border-2 p-4;
 	}
 	p,
 	b,
 	span {
-		@apply text-base font-oxanium;
+		@apply font-oxanium text-base;
 	}
 	b {
 		@apply font-bold;
 	}
 	nav {
-		@apply absolute left-[0dvw] top-[37dvh] w-[10dvw] h-[46dvh] flex flex-col gap-[1rem] items-center;
+		@apply absolute left-[0dvw] top-[42dvh] flex h-[39.5dvh] w-[9.8dvw] flex-col items-center gap-[1rem];
 		.nav__link {
-			@apply w-full relative grow flex justify-center items-center text-white/80 font-bold text-lg xl:text-2xl cursor-pointer hover:text-F-50/100 hover:underline transition-all duration-300;
+			@apply hover:text-F-50/100 relative flex w-full grow cursor-pointer items-center justify-center text-lg font-bold text-white/80 transition-all duration-300 hover:underline xl:text-2xl;
 			.nav__link-child {
-				@apply w-full h-full flex items-center justify-center;
+				@apply flex h-full w-full items-center justify-center;
 			}
 			.nav__arrow {
 				position: absolute;
@@ -188,46 +183,46 @@ body {
 .card {
 	@apply flex flex-col justify-start gap-2 xl:gap-4;
 	.card__header {
-		@apply w-full h-auto pb-4 border-b border-F/25 flex flex-row justify-between items-center;
+		@apply border-F/25 flex h-auto w-full flex-row items-center justify-between border-b pb-4;
 		.card__title {
 			@apply flex flex-row items-center gap-2;
 			h3 {
-				@apply text-2xl tracking-[.2rem] font-teko font-bold uppercase;
+				@apply font-teko text-2xl font-bold uppercase tracking-[.2rem];
 			}
 			.card__sub-head {
-				@apply text-sm text-F/50 font-oxanium;
+				@apply text-F/50 font-oxanium text-sm;
 			}
 		}
 		.card__right-items {
-			@apply flex flex-col text-sm text-F/30 text-right;
+			@apply text-F/30 flex flex-col text-right text-sm;
 		}
 	}
 	.card__body {
-		@apply text-base font-oxanium h-[calc(100%-3rem)] w-full overflow-y-auto overscroll-none scroll-smooth;
+		@apply font-oxanium h-[calc(100%-3rem)] w-full overflow-y-auto overscroll-none scroll-smooth text-base;
 	}
 }
 
 #bio {
 	.bio__image {
-		@apply w-1/2 h-fit rounded-lg border-2 border-F/25 grayscale-80;
+		@apply border-F/25 grayscale-80 h-fit w-1/2 rounded-lg border-2;
 	}
 	.bio__info {
-		@apply flex flex-col justify-between w-full h-auto;
+		@apply flex h-auto w-full flex-col justify-between;
 	}
 	.bio__line {
-		@apply flex justify-between align-middle lg:flex-col lg:text-right p-2;
+		@apply flex justify-between p-2 align-middle lg:flex-col lg:text-right;
 		p {
 			@apply text-right;
 		}
 	}
 	.bio__divider {
-		@apply border-t-2 border-dotted border-F/25;
+		@apply border-F/25 border-t-2 border-dotted;
 	}
 }
 
 #skills {
 	.skills__actions {
-		@apply flex flex-row justify-around items-center gap-4;
+		@apply flex flex-row items-center justify-around gap-4;
 		.skill__action {
 			@apply flex flex-row items-center gap-4;
 			label {
@@ -237,7 +232,7 @@ body {
 				}
 			}
 			select {
-				@apply w-full h-full p-1 bg-F/10 border-2 border-F/20 text-F/50 font-bold uppercase tracking-widest cursor-pointer;
+				@apply bg-F/10 border-F/20 text-F/50 h-full w-full cursor-pointer border-2 p-1 font-bold uppercase tracking-widest;
 				&:focus {
 					@apply border-F/50 outline-none;
 				}
@@ -252,13 +247,13 @@ body {
 		.skill__label {
 		}
 		.skill__container {
-			@apply w-full bg-F/25 p-1  mask-clip-padding;
+			@apply bg-F/25 mask-clip-padding w-full p-1;
 		}
 		.skill__bar {
-			@apply py-2 px-4 text-right opacity-80;
+			@apply px-4 py-2 text-right opacity-80;
 		}
 		.skill__percent {
-			@apply opacity-100 text-shadow-sm font-bold text-F-50/100;
+			@apply text-F-50/100 text-shadow-sm font-bold opacity-100;
 		}
 	}
 }
@@ -266,7 +261,7 @@ body {
 #history {
 	.history__card {
 		.history__list {
-			@apply w-[calc(100%-1rem)] h-full flex flex-col justify-between gap-4 list-disc list-outside ml-4;
+			@apply ml-4 flex h-full w-[calc(100%-1rem)] list-outside list-disc flex-col justify-between gap-4;
 			.history__item {
 				@apply text-base tracking-wide;
 			}
@@ -277,39 +272,39 @@ body {
 #projects {
 	.project__card {
 		.project__link {
-			@apply text-F/50 underline decoration-F/20 underline-offset-2 hover:text-F-50/100 transition-all duration-300;
+			@apply text-F/50 decoration-F/20 hover:text-F-50/100 underline underline-offset-2 transition-all duration-300;
 		}
 		.project__body {
-			@apply flex flex-col items-center xl:flex-row xl:justify-between gap-4;
+			@apply flex flex-col items-center gap-4 xl:flex-row xl:justify-between;
 			.project__image {
-				@apply w-full h-auto xl:w-1/2;
+				@apply h-auto w-full xl:w-1/2;
 			}
 			.project__description {
-				@apply w-full h-auto xl:w-1/2;
+				@apply h-auto w-full xl:w-1/2;
 			}
 		}
 	}
 }
 
 form {
-	@apply w-full h-full grid grid-rows-[5fr_5fr_2fr] lg:grid-rows-[5fr_1fr] grid-cols-[1fr] lg:grid-cols-2 gap-4 lg:gap-8;
+	@apply grid h-full w-full grid-cols-[1fr] grid-rows-[5fr_5fr_2fr] gap-4 lg:grid-cols-2 lg:grid-rows-[5fr_1fr] lg:gap-8;
 	.contact__inputs {
-		@apply w-full h-full flex flex-col justify-between col-span-1;
+		@apply col-span-1 flex h-full w-full flex-col justify-between;
 		.contact__group {
 			@apply justify-center first:justify-start last:justify-end;
 		}
 	}
 	.contact__area {
-		@apply w-full h-full col-span-1;
+		@apply col-span-1 h-full w-full;
 		textarea {
 			@apply h-full resize-none;
 		}
 	}
 	.contact__group {
-		@apply w-full h-full flex flex-col gap-2;
+		@apply flex h-full w-full flex-col gap-2;
 		input,
 		textarea {
-			@apply w-full py-1 px-2 border-2 border-F/20 bg-F/10 focus:outline-none;
+			@apply border-F/20 bg-F/10 w-full border-2 px-2 py-1 focus:outline-none;
 
 			&:user-valid {
 				@apply border-F/50;
@@ -335,9 +330,9 @@ form {
 	}
 
 	.contact__actions {
-		@apply py-4 col-span-1 lg:col-start-2 h-full flex items-center;
+		@apply col-span-1 flex h-full items-center py-4 lg:col-start-2;
 		.contact__button {
-			@apply w-full h-full bg-F/20 border-2 border-F/25 text-F/50 font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer;
+			@apply bg-F/20 border-F/25 text-F/50 h-full w-full cursor-pointer border-2 font-bold uppercase tracking-widest transition-all duration-300;
 			&.loading {
 				@apply cursor-not-allowed opacity-50;
 			}

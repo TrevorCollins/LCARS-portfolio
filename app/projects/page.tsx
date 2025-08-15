@@ -3,8 +3,11 @@ import Project from './components/Project';
 
 const Projects = () => {
 	return (
-		<div id='projects' className='w-full h-full grid grid-cols-6 lg:grid-cols-12 lg:grid-rows-6 gap-[2dvw]'>
-			{projects.map(project => (
+		<div
+			id="projects"
+			className="grid h-full w-full grid-cols-6 gap-[2dvw] lg:grid-cols-12 lg:grid-rows-6"
+		>
+			{projects.map((project) => (
 				<Project key={project.id} {...project} />
 			))}
 		</div>

@@ -11,7 +11,9 @@ export const navLinks: NavLinkType[] = [
 	{ label: 'Contact', path: '/contact', id: 'contact', color: 'C' },
 ];
 
-export const navColorClasses: { [color: string]: { bg: string; active: string } } = {
+export const navColorClasses: {
+	[color: string]: { bg: string; active: string };
+} = {
 	A: { bg: 'bg-A/80 hover:bg-A/100', active: 'bg-A/100' },
 	B: { bg: 'bg-B/80 hover:bg-B/100', active: 'bg-B/100' },
 	C: { bg: 'bg-C/80 hover:bg-C/100', active: 'bg-C/100' },
@@ -137,7 +139,14 @@ export const skillsArr: SkillType[] = [
 	},
 ];
 
-export const skillCategories = ['Coding', 'Design', 'Teamwork', 'Frontend', 'Backend', 'Testing'];
+export const skillCategories = [
+	'Coding',
+	'Design',
+	'Teamwork',
+	'Frontend',
+	'Backend',
+	'Testing',
+];
 export const skillSorts = [
 	{ label: 'Proficiency', value: 'percent' },
 	{ label: 'Name', value: 'label' },
@@ -202,7 +211,8 @@ export const projects: ProjectType[] = [
 		url: 'https://gregtracyviolins.com',
 		repo: 'greg-tracy-violins',
 		thumbnail: GregTracyViolins,
-		description: 'A portfolio site for a violin maker and restorer in Pittsburgh, PA. (still under construction)',
+		description:
+			'A portfolio site for a violin maker and restorer in Pittsburgh, PA. (still under construction)',
 	},
 	{
 		id: 'costar',
@@ -219,7 +229,8 @@ export const projects: ProjectType[] = [
 		url: 'https://gracesnyder.com',
 		repo: 'grace-portfolio',
 		thumbnail: GracePortfolio,
-		description: 'A portfolio site for a photographer in Kansas City, MO. Probably the best photographer in Kansas City. I might be biased though; she is my wife.',
+		description:
+			'A portfolio site for a photographer in Kansas City, MO. Probably the best photographer in Kansas City. I might be biased though; she is my wife.',
 	},
 	{
 		id: 'lcars',

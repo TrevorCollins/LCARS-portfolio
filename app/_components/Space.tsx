@@ -29,7 +29,7 @@ export const Star = ({ position }: { position: Vector3; idx: number }) => {
 	});
 	return (
 		<Points>
-			<pointsMaterial color='#fae9b2' />
+			<pointsMaterial color="#fae9b2" />
 			<Point ref={pointRef} position={[position.x, position.y, position.z]} />
 		</Points>
 	);
@@ -37,10 +37,12 @@ export const Star = ({ position }: { position: Vector3; idx: number }) => {
 
 const Space = () => {
 	return (
-		<div className='w-full h-full fixed top-0 left-0'>
-			<Canvas camera={{ position: [0, 0, -400], rotateX: Math.PI / 2, fov: 60 }}>
+		<div className="fixed left-0 top-0 h-full w-full">
+			<Canvas
+				camera={{ position: [0, 0, -400], rotateX: Math.PI / 2, fov: 60 }}
+			>
 				<ambientLight intensity={1} />
-				<fog attach='fog' args={['black', 300, 400]} />
+				<fog attach="fog" args={['black', 300, 400]} />
 				<Stars />
 			</Canvas>
 		</div>
