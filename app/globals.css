@@ -157,27 +157,6 @@ body {
 	b {
 		@apply font-bold;
 	}
-	nav {
-		@apply absolute left-[0dvw] top-[42dvh] flex h-[39.5dvh] w-[9.8dvw] flex-col items-center gap-[1rem];
-		.nav__link {
-			@apply hover:text-F-50/100 relative flex w-full grow cursor-pointer items-center justify-center text-lg font-bold text-white/80 transition-all duration-300 hover:underline xl:text-2xl;
-			.nav__link-child {
-				@apply flex h-full w-full items-center justify-center;
-			}
-			.nav__arrow {
-				position: absolute;
-				top: 0;
-				right: -1rem;
-				width: 1rem;
-				height: 100%;
-				clip-path: polygon(0 0, 0 50%, 0 100%);
-				transition: clip-path 0.3s ease-in-out;
-				&.active {
-					clip-path: polygon(0 0, 100% 50%, 0 100%);
-				}
-			}
-		}
-	}
 }
 
 .card {
@@ -199,6 +178,19 @@ body {
 	}
 	.card__body {
 		@apply font-oxanium h-[calc(100%-3rem)] w-full overflow-y-auto overscroll-none scroll-smooth text-base;
+	}
+}
+
+.nav__arrow {
+	position: absolute;
+	top: 0;
+	right: -1rem;
+	width: 1rem;
+	height: 100%;
+	clip-path: polygon(0 0, 0 50%, 0 100%);
+	transition: clip-path 0.3s ease-in-out;
+	&.active {
+		clip-path: polygon(0 0, 100% 50%, 0 100%);
 	}
 }
 
