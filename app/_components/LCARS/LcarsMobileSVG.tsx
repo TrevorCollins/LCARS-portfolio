@@ -45,8 +45,8 @@ const LcarsMobileSVG = () => (
 				<rect className="lcars-blip lcars-obj fill-E-100/80" x=".708" y=".145" width=".004" height=".035" />
 				<rect className="lcars-blip lcars-obj fill-E-100/80" x=".716" y=".145" width=".004" height=".035" />
 			</g>
-			<rect className="lcars-obj fill-C/80" x=".3" y=".1" width=".155" height=".08" />
-			<rect className="lcars-obj fill-A/80" y=".1" width=".295" height=".08015" />
+			<rect className="lcars-obj fill-C/80" x=".22" y=".1" width=".235" height=".08" />
+			<rect className="lcars-obj fill-A/80" y=".1" width=".215" height=".08015" />
 			<rect className="lcars-obj fill-A/80" y=".18" width=".175" height=".82" />
 			<rect className="lcars-obj fill-E/80" x=".18" y=".92" width=".27" height=".08" />
 			<rect className="lcars-obj fill-C/80" x=".455" y=".92" width=".2" height=".08" />

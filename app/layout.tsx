@@ -4,6 +4,7 @@ import './globals.css';
 import Header from './_components/Header';
 import Space from './_components/Space';
 import LCARS from './_components/LCARS';
+import Body from './_components/Body';
 
 const oxanium = localFont({
 	src: [
@@ -39,9 +40,7 @@ export default function RootLayout({
 				<div className="fixed left-[2dvw] top-0 h-[98dvh] w-[96dvw] md:w-[98dvw]">
 					<LCARS />
 					<Header />
-					<main className="absolute right-[3dvw] top-[20dvh] flex h-[67dvh] w-[90dvw] flex-row gap-[2dvw] overflow-auto md:right-[2dvw] md:top-[29dvh] md:h-[60dvh] md:w-[83dvw]">
-						{children}
-					</main>
+					<Body>{children}</Body>
 				</div>
 			</body>
 		</html>
