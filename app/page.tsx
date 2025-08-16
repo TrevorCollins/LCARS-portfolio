@@ -5,22 +5,15 @@ import { Float, Sphere, Stars, Trail } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useMemo, useRef } from 'react';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
-// #5FDBFC
-// rgb(95, 219, 252)
 
 export default function Home() {
-	// const { speed, radius, bloom } = useControls({
-	// 	speed: { value: 4, min: 1, max: 10, step: 0.1 },
-	// 	radius: { value: 5, min: 1, max: 10, step: 0.1 },
-	// 	bloom: { value: 0.75, min: 0.1, max: 1, step: 0.01 },
-	// });
 	const { speed, radius, bloom } = {
 		speed: 4,
 		radius: 5,
 		bloom: 0.75,
 	};
 	return (
-		<section id="home" className="mx-auto aspect-square w-full p-0 lg:max-w-[50dvw]">
+		<section id="home" className="h-full w-full p-0">
 			<Canvas className="fixed overflow-visible rounded-xl" camera={{ position: [0, 0, 10] }}>
 				<color attach="background" args={['black']} />
 				<Atom radius={radius} speed={speed} />

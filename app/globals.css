@@ -149,11 +149,12 @@
 }
 
 @utility nav-mobile {
-	@apply absolute left-[3dvw] top-[20dvh] z-50 h-[67dvh] w-[90dvw] gap-0 overflow-clip font-extrabold uppercase;
+	@apply absolute left-[3dvw] top-[20dvh] z-50 h-[67dvh] w-[90dvw] -translate-y-[150%] gap-0 overflow-clip font-extrabold uppercase;
 	.nav-link {
 		@apply absolute top-[-100%] h-1/5 text-2xl first:rounded-t-2xl last:rounded-b-2xl;
 	}
 	&.open {
+		@apply translate-y-0;
 		.nav-link {
 			@apply nth-2:top-1/5 nth-3:top-2/5 nth-4:top-3/5 nth-5:top-4/5 first:top-0;
 		}
