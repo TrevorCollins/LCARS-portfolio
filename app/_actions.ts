@@ -16,8 +16,9 @@ export async function sendEmail(request: ContactFormFields) {
 			const data = await resend.emails.send({
 				from: 'Trevor Collins <contact@trevorcollins.me>',
 				to: email,
+				bcc: 'tcollinst1i@gmail.com',
 				subject: 'Hello from Trevor!',
-				react: ContactTemplate({ name, company }),
+				react: ContactTemplate({ name, company, email, message }),
 			});
 
 			return { success: true, data };
