@@ -14,7 +14,7 @@ export default function Home() {
 	};
 	return (
 		<section id="home" className="h-full w-full p-0">
-			<Canvas className="fixed overflow-visible rounded-xl" camera={{ position: [0, 0, 10] }}>
+			<Canvas className="rounded-xl" camera={{ position: [0, 0, 10] }}>
 				<color attach="background" args={['black']} />
 				<Atom radius={radius} speed={speed} />
 				<Stars saturation={0} count={200} speed={0.5} />

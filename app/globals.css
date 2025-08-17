@@ -1,5 +1,11 @@
 @import 'tailwindcss';
 
+@property --border-angle {
+	syntax: '<angle>';
+	inherits: true;
+	initial-value: 0deg;
+}
+
 @view-transition {
 	navigation: auto;
 }
@@ -27,6 +33,15 @@
 		translate: -100% 0;
 		transform: scale(0.5);
 		opacity: 0;
+	}
+}
+
+@keyframes spin-border {
+	from {
+		--border-angle: 0deg;
+	}
+	to {
+		--border-angle: 360deg;
 	}
 }
 
@@ -133,6 +148,10 @@
 	--color-white: var(--color-F-100);
 	--color-black: var(--color-A-900);
 
+	--color-card-background: lch(from var(--color-F) l c h / 0.5);
+	--color-card-border-1: lch(from var(--color-F) l c h / 0.4);
+	--color-card-border-2: lch(from var(--color-F) l c h / 0.8);
+
 	--font-oxanium: oxanium, 'sans-serif';
 	--font-teko: teko, 'sans-serif';
 }
@@ -229,68 +248,34 @@ body {
 	}
 }
 
-/* .nav__ham .line__1 {
-	--rotate-line: 45deg;
-	--ending-dashoffset: 0;
-	--translate-x: 0;
-	transform-origin: 65px 45px;
-}
-.nav__ham .line__2 {
-	--rotate-line: 0deg;
-	--ending-dashoffset: 79.9;
-	--translate-x: 49.9%;
-}
-.nav__ham .line__3 {
-	--rotate-line: -45deg;
-	--ending-dashoffset: 0;
-	--translate-x: 0;
-	transform-origin: 25% 60%;
-}
-
-@keyframes to-nav-x {
-	0% {
-		stroke-dashoffset: 0;
+.card {
+	--animation-time: attr(data-duration s, 8s);
+	@apply relative isolate flex max-h-[66dvh] w-full grow flex-col items-start justify-between gap-2 rounded-xl p-4 xl:gap-4;
+	&::before,
+	&::after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		border-radius: inherit;
+		border-width: 2px;
+		border-color: transparent;
+		padding: 10px;
+		background-image: linear-gradient(var(--color-black), var(--color-black)), conic-gradient(from var(--border-angle), var(--color-card-border-1) 90%, var(--color-card-border-2));
+		background-origin: border-box;
+		background-clip: padding-box, border-box;
+		animation: spin-border var(--animation-time) linear infinite;
 	}
-	40% {
-		stroke-dashoffset: 79.9;
-		translate: var(--translate-x);
+	&::before {
+		opacity: 50%;
 	}
-	60% {
-		stroke-dashoffset: 79.9;
-		rotate: var(--rotate-line);
-		translate: var(--translate-x);
-	}
-	100% {
-		stroke-dashoffset: var(--ending-dashoffset);
-		rotate: var(--rotate-line);
-		translate: var(--translate-x);
+	&::after {
+		filter: blur(0.4rem);
 	}
 }
-@keyframes to-nav-ham {
-	0% {
-		stroke-dashoffset: 0; 
-		rotate: var(--rotate-line);
-		translate: var(--translate-x);
-	}
-	40% {
-		stroke-dashoffset: 79.9;
-		rotate: var(--rotate-line);
-		translate: var(--translate-x);
-	}
-	60% {
-		stroke-dashoffset: 79.9;
-		translate: var(--translate-x);
-	}
-	100% {
-		stroke-dashoffset: 0;
-	}
-} 
-.nav__ham .line {
-	animation: to-nav-ham 1s forwards;
-}
-.nav__ham:hover .line {
-	animation: to-nav-x 1s forwards;
-} */
 
 #bio {
 	.bio__image {
@@ -312,7 +297,7 @@ body {
 
 #skills {
 	.skills__actions {
-		@apply flex flex-row items-center justify-around gap-4;
+		@apply sticky top-0 z-10 flex flex-row items-center justify-around gap-4 pb-4;
 		.skill__action {
 			@apply flex flex-row items-center gap-4;
 			label {
@@ -332,24 +317,26 @@ body {
 			}
 		}
 	}
-	.skill {
-		@apply my-2;
-		.skill__label {
-		}
-		.skill__container {
-			@apply bg-F/25 mask-clip-padding w-full p-1;
-		}
-		.skill__bar {
-			@apply px-4 py-2 text-right opacity-80;
-		}
-		.skill__percent {
-			@apply text-F-50/100 text-shadow-sm font-bold opacity-100;
+	.skills__body {
+		@apply h-full overflow-clip overflow-y-scroll pb-10;
+		.skill {
+			@apply my-2;
+			.skill__container {
+				@apply bg-F/25 mask-clip-padding w-full p-1;
+			}
+			.skill__bar {
+				@apply px-4 py-2 text-right opacity-80;
+			}
+			.skill__percent {
+				@apply text-F-50/100 text-shadow-sm font-bold opacity-100;
+			}
 		}
 	}
 }
 
 #history {
 	.history__card {
+		@apply h-fit;
 		.history__list {
 			@apply ml-4 flex h-full w-[calc(100%-1rem)] list-outside list-disc flex-col justify-between gap-4;
 			.history__item {

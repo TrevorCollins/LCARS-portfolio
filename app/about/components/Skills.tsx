@@ -14,17 +14,10 @@ const Skills = ({ ...props }) => {
 
 	return (
 		<Card id="skills" title="Skills" {...props}>
-			<SkillActions
-				sortedSkills={sortedSkills}
-				setSortedSkills={setSortedSkills}
-			/>
-			<div className="skills__body h-full">
+			<SkillActions sortedSkills={sortedSkills} setSortedSkills={setSortedSkills} />
+			<div className="skills__body">
 				{sortedSkills.map((skill, idx) => (
-					<Skill
-						key={skill.label}
-						{...skill}
-						color={colorArr[idx % colorArr.length]}
-					/>
+					<Skill key={skill.label} {...skill} color={colorArr[idx % colorArr.length]} />
 				))}
 			</div>
 		</Card>

@@ -29,18 +29,13 @@ const SkillActions = ({ sortedSkills, setSortedSkills }: SkillActionsProps) => {
 			return 0;
 		});
 		setSortedSkills(sortedArr);
-	}, [sort, skillsArr]);
+	}, [sort, filter, skillsArr]);
 
 	return (
 		<div className="skills__actions">
 			<div className="skill__action">
 				<label htmlFor="filter-select">Filter</label>
-				<select
-					className="skill__action"
-					id="filter-select"
-					onChange={(e) => setSkillActions(e.target.value as SkillCat)}
-					value={filter}
-				>
+				<select className="skill__action" id="filter-select" onChange={(e) => setSkillActions(e.target.value as SkillCat)} value={filter}>
 					<option value="None">None</option>
 					{skillCategories.map((cat) => (
 						<option key={cat} value={cat}>
@@ -51,12 +46,7 @@ const SkillActions = ({ sortedSkills, setSortedSkills }: SkillActionsProps) => {
 			</div>
 			<div className="skill__action">
 				<label htmlFor="sort-select">Sort</label>
-				<select
-					className="skill__action"
-					id="sort-select"
-					onChange={(e) => setSort(e.target.value as keyof SkillType)}
-					value={sort}
-				>
+				<select className="skill__action" id="sort-select" onChange={(e) => setSort(e.target.value as keyof SkillType)} value={sort}>
 					{skillSorts.map(({ label, value }) => (
 						<option key={value} value={value}>
 							{label}

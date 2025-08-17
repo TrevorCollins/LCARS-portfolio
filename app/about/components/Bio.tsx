@@ -25,9 +25,7 @@ const Bio = ({ ...props }) => {
 					</div>
 				</div>
 			</div>
-			<div className="mt-4 h-auto w-full text-2xl leading-10 tracking-widest">
-				{bioCopy}
-			</div>
+			<div className="mt-4 h-full w-full overflow-clip overflow-y-scroll text-xl leading-10 tracking-widest md:text-2xl">{bioCopy}</div>
 		</Card>
 	);
 };
