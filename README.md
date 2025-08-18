@@ -11,28 +11,27 @@ A modern, interactive portfolio website inspired by the LCARS (Library Computer 
 ## 📸 Screenshots
 
 ### Desktop Experience
-
-![LCARS Interface](./screenshots/SS_Home.png)
+<img src="./screenshots/SS_Home.png" width="50%" alt="LCARS Interface" />
 _LCARS-inspired interface with authentic Star Trek aesthetics_
 
-![Projects Showcase](./screenshots/SS_Projects.png)
+<img src="./screenshots/SS_Projects.png" width="50%" alt="Projects Showcase" />
 _Project portfolio with detailed case studies_
 
-![Contact Form](./screenshots/SS_Contact.png)
+<img src="./screenshots/SS_Contact.png" width="50%" alt="Contact Form" />
 _Functional contact form with real-time validation_
 
 ### Mobile Experience
 
-![Mobile Home](./screenshots/SS_Home-mobile.png)
+<img src="./screenshots/SS_Home-mobile.png" width="25%" alt="Mobile Home" />
 _Responsive LCARS interface optimized for mobile devices_
 
-![Mobile Navigation](./screenshots/SS_Nav-mobile.png)
+<img src="./screenshots/SS_Nav-mobile.png" width="25%" alt="Mobile Navigation" />
 _Touch-friendly navigation with Star Trek-inspired mobile menu_
 
-![Mobile Projects](./screenshots/SS_Projects-mobile.png)
+<img src="./screenshots/SS_Projects-mobile.png" width="25%" alt="Mobile Projects" />
 _Project cards adapted for mobile viewing with swipe gestures_
 
-![Mobile Contact](./screenshots/SS_Contact-mobile.png)
+<img src="./screenshots/SS_Contact-mobile.png" width="25%" alt="Mobile Contact" />
 _Mobile-optimized contact form with improved touch targets_
 
 ## ✨ Features
