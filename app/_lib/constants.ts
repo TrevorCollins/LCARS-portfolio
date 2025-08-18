@@ -2,6 +2,7 @@ import type { JobType, NavLinkType, ProjectType, SkillType } from './types';
 import GregTracyViolins from '../../public/images/projects/greg-tracy-violins.webp';
 import Costar from '../../public/images/projects/costar.webp';
 import GracePortfolio from '../../public/images/projects/grace-portfolio.webp';
+import LCARS from '../../public/images/projects/lcars.webp';
 
 export const navLinks: NavLinkType[] = [
 	{ label: 'Home', path: '/', id: 'home', color: 'E' },
@@ -228,7 +229,7 @@ export const projects: ProjectType[] = [
 		name: 'LCARS Portfolio',
 		url: 'https://trevorcollins.me',
 		repo: 'lcars',
-		thumbnail: Costar,
+		thumbnail: LCARS,
 		description: 'The site you are on right now!',
 	},
 ];
