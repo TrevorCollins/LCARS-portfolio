@@ -1,5 +1,3 @@
-'use client';
-
 import { navLinks } from '@/app/_lib/constants';
 import NavLink from './NavLink';
 

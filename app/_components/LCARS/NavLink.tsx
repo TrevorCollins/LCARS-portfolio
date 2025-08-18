@@ -1,5 +1,3 @@
-'use client';
-
 import { navColorClasses } from '@/app/_lib/constants';
 import { NavLinkType } from '@/app/_lib/types';
 import Link from 'next/link';

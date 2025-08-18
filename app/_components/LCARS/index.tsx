@@ -3,15 +3,19 @@
 import NavCon from './NavCon';
 import LcarsSVG from './LcarsSVG';
 import LcarsMobileSVG from './LcarsMobileSVG';
-import MediaQuery, { useMediaQuery } from 'react-responsive';
 import NavHam from './NavHam';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { useIsMobile } from '@/app/_lib/utils';
 
 const LCARS = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const currentPath = usePathname();
-	const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+	let isMobile = false;
+
+	if (typeof window !== 'undefined') {
+		isMobile = useIsMobile();
+	}
 
 	useEffect(() => {
 		setIsOpen(false);

@@ -3,8 +3,8 @@ import localFont from 'next/font/local';
 import './globals.css';
 import Header from './_components/Header';
 import Space from './_components/Space';
-import LCARS from './_components/LCARS';
 import Body from './_components/Body';
+import LCARS from './_components/LCARS';
 
 const oxanium = localFont({
 	src: [
