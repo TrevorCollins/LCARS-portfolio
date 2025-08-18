@@ -250,7 +250,7 @@ body {
 
 .card {
 	--animation-time: attr(data-duration s, 8s);
-	@apply relative isolate flex max-h-[66dvh] w-full grow flex-col items-start justify-between gap-2 rounded-xl p-4 xl:gap-4;
+	@apply relative isolate flex h-full max-h-[66dvh] w-full grow flex-col items-start justify-between gap-2 rounded-xl p-4 xl:gap-4;
 	&::before,
 	&::after {
 		content: '';

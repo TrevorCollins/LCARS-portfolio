@@ -3,19 +3,11 @@ import Form from './components/Form';
 
 const Contact = () => {
 	return (
-		<div
-			id="contact"
-			className="grid h-full w-full grid-cols-1 grid-rows-5 gap-4 lg:gap-8"
-		>
-			<Card id="contact-form" title="Let's chat!" className="row-span-4">
+		<div id="contact" className="flex h-full max-h-full w-full flex-col gap-4">
+			<Card id="contact-form" title="Let's chat!" className="grow-4 max-h-4/5!">
 				<Form />
 			</Card>
-			<Card
-				id="contact-info"
-				title="Email Info"
-				subHead="Get in touch"
-				className="h-fit w-full lg:w-1/2"
-			>
+			<Card id="contact-info" title="Email Info" subHead="Get in touch" className="grow-1 lg:w-1/2!">
 				<a href="mailto:contact@trevorcollins.me">contact@trevorcollins.me</a>
 			</Card>
 		</div>

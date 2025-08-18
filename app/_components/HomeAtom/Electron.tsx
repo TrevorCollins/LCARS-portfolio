@@ -11,7 +11,7 @@ function Electron({ radius = 4, speed = 3, ...props }) {
 	});
 	return (
 		<group {...props}>
-			<Trail width={2} length={20} color={new THREE.Color(1, 2, 7)} stride={0} attenuation={(t) => t * t} decay={10}>
+			<Trail width={1} length={50} color={new THREE.Color(1, 2, 7)} stride={0} attenuation={(t) => t * t} decay={5}>
 				<mesh ref={ref}>
 					<sphereGeometry args={[0.15]} />
 					<meshBasicMaterial color={[0, 2, 8]} toneMapped={false} />
