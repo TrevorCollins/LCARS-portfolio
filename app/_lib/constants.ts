@@ -1,8 +1,28 @@
-import type { JobType, NavLinkType, ProjectType, SkillType } from './types';
+import type { AtomProps, BloomProps, ElectronProps, JobType, NavLinkType, ProjectType, SkillType } from './types';
 import GregTracyViolins from '../../public/images/projects/greg-tracy-violins.webp';
 import Costar from '../../public/images/projects/costar.webp';
 import GracePortfolio from '../../public/images/projects/grace-portfolio.webp';
 import LCARS from '../../public/images/projects/lcars.webp';
+
+export const atom: AtomProps = {
+	floatSpeed: 4,
+	floatIntensity: 2,
+	rotationIntensity: 1,
+};
+export const bloom: BloomProps = {
+	luminanceThreshold: 1,
+	radius: 0.4,
+	intensity: 0.5,
+	luminanceSmoothing: 0.5,
+};
+export const electron: ElectronProps = {
+	speed: 4,
+	radius: 2.75,
+	width: 0.25,
+	trailWidth: 3,
+	length: 10,
+	decay: 1.3,
+};
 
 export const navLinks: NavLinkType[] = [
 	{ label: 'Home', path: '/', id: 'home', color: 'E' },

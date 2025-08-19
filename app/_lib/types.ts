@@ -4,16 +4,20 @@ import * as z from 'zod';
 export type AtomProps = {
 	floatSpeed: number;
 	floatIntensity: number;
+	rotationIntensity: number;
 };
 
 export type BloomProps = {
 	radius: number;
-	luminance: number;
+	luminanceThreshold: 1;
+	intensity: 0.5;
+	luminanceSmoothing: 0.5;
 };
 export type ElectronProps = {
 	speed: number;
 	radius: number;
 	width: number;
+	trailWidth: number;
 	length: number;
 	decay: number;
 	rotation?: [x: number, y: number, z: number];
