@@ -4,8 +4,11 @@ import { useState } from 'react';
 import { skillsArr } from '../../_lib/constants';
 import { Skill } from './Skill';
 import { SkillType } from '@/app/_lib/types';
-import Card from '@/app/_components/Card';
+// import Card from '@/app/_components/Card';
 import SkillActions from './SkillActions';
+import dynamic from 'next/dynamic';
+
+const Card = dynamic(() => import('@/app/_components/Card'), { ssr: false });
 
 const colorArr = ['A', 'D', 'B', 'E', 'C'];
 

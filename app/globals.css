@@ -293,11 +293,18 @@ body {
 	.bio__divider {
 		@apply border-F/25 border-t-2 border-dotted;
 	}
+
+	.bio__copy {
+		@apply my-2 overflow-x-clip overflow-y-scroll py-2;
+		p {
+			@apply text-pretty text-lg leading-8 tracking-wide md:text-xl;
+		}
+	}
 }
 
 #skills {
 	.skills__actions {
-		@apply sticky top-0 z-10 flex flex-row items-center justify-around gap-4 pb-4;
+		@apply sticky top-0 z-10 flex flex-row items-center justify-around gap-4 bg-black pb-4;
 		.skill__action {
 			@apply flex flex-row items-center gap-4;
 			label {
@@ -318,7 +325,7 @@ body {
 		}
 	}
 	.skills__body {
-		@apply h-full overflow-clip overflow-y-scroll pb-10;
+		@apply h-full overflow-clip overflow-y-scroll;
 		.skill {
 			@apply my-2;
 			.skill__container {
@@ -338,7 +345,7 @@ body {
 	.history__card {
 		@apply h-fit;
 		.history__list {
-			@apply ml-4 flex h-full w-[calc(100%-1rem)] list-outside list-disc flex-col justify-between gap-4;
+			@apply ml-4 flex h-full w-full list-outside list-disc flex-col justify-between gap-4;
 			.history__item {
 				@apply text-base tracking-wide;
 			}
@@ -364,9 +371,9 @@ body {
 }
 
 form {
-	@apply grid h-full w-full grid-cols-[1fr] grid-rows-[5fr_5fr_2fr] gap-4 lg:grid-cols-2 lg:grid-rows-[5fr_1fr] lg:gap-8;
+	@apply flex h-full w-full flex-col gap-4;
 	.contact__inputs {
-		@apply col-span-1 flex h-full w-full flex-col justify-between;
+		@apply col-span-1 flex h-full w-full flex-col gap-8;
 		.contact__group {
 			@apply justify-center first:justify-start last:justify-end;
 		}
@@ -407,7 +414,7 @@ form {
 	}
 
 	.contact__actions {
-		@apply col-span-1 flex h-full items-center py-4 lg:col-start-2;
+		@apply col-span-1 flex h-full w-1/2 items-center self-end py-4 lg:col-start-2;
 		.contact__button {
 			@apply bg-F/20 border-F/25 text-F/50 h-full w-full cursor-pointer border-2 font-bold uppercase tracking-widest transition-all duration-300;
 			&.loading {

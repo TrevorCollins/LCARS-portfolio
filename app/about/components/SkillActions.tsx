@@ -1,5 +1,6 @@
 import { skillCategories, skillsArr, skillSorts } from '@/app/_lib/constants';
 import { SkillCat, SkillType } from '@/app/_lib/types';
+import { ArrowDownAZ, ListFilter } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 type SkillActionsProps = {
@@ -34,7 +35,9 @@ const SkillActions = ({ sortedSkills, setSortedSkills }: SkillActionsProps) => {
 	return (
 		<div className="skills__actions">
 			<div className="skill__action">
-				<label htmlFor="filter-select">Filter</label>
+				<label htmlFor="filter-select">
+					<ListFilter />
+				</label>
 				<select className="skill__action" id="filter-select" onChange={(e) => setSkillActions(e.target.value as SkillCat)} value={filter}>
 					<option value="None">None</option>
 					{skillCategories.map((cat) => (
@@ -45,7 +48,9 @@ const SkillActions = ({ sortedSkills, setSortedSkills }: SkillActionsProps) => {
 				</select>
 			</div>
 			<div className="skill__action">
-				<label htmlFor="sort-select">Sort</label>
+				<label htmlFor="sort-select">
+					<ArrowDownAZ />
+				</label>
 				<select className="skill__action" id="sort-select" onChange={(e) => setSort(e.target.value as keyof SkillType)} value={sort}>
 					{skillSorts.map(({ label, value }) => (
 						<option key={value} value={value}>
