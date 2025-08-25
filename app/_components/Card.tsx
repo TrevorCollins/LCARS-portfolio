@@ -18,7 +18,7 @@ const Card = ({ title, children, id, subHead, rightItems, className }: CardProps
 					<h3 className="font-teko text-2xl font-bold uppercase tracking-[.2rem]">{title}</h3>
 					{subHead && <span className="text-F/50 font-oxanium text-sm">{subHead}</span>}
 				</div>
-				<div className="text-F/30 flex flex-col text-right text-sm">{rightItems && rightItems.map((item, idx) => <div key={idx}>{item}</div>)}</div>
+				<div className="text-F/30 flex flex-col text-nowrap text-right text-sm">{rightItems && rightItems.map((item, idx) => <div key={idx}>{item}</div>)}</div>
 			</header>
 			<div className="font-oxanium h-[calc(100%-3rem)] w-full overflow-clip overflow-y-scroll scroll-smooth text-sm md:text-base">{children}</div>
 		</section>
