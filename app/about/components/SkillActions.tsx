@@ -9,18 +9,27 @@ type SkillActionsProps = {
 };
 
 const SkillActions = ({ sortedSkills, setSortedSkills }: SkillActionsProps) => {
-	const [filter, setSkillActions] = useState<SkillCat | 'None'>('None');
+	const [filter, setFilter] = useState<SkillCat | 'None'>('None');
 	const [sort, setSort] = useState<keyof SkillType>('percent');
 
 	useEffect(() => {
+		handleFilterChange();
+	}, [filter]);
+
+	useEffect(() => {
+		sortSkills(sortedSkills);
+	}, [sort]);
+
+	const handleFilterChange = () => {
 		const filteredArr = [...skillsArr].filter((skl) => {
-			if (!filter || filter === 'None') return skl;
+			if (!filter || filter === 'None') return true;
 			return skl.categories.indexOf(filter) > -1;
 		});
-		setSortedSkills(filteredArr);
-	}, [filter]);
-	useEffect(() => {
-		const sortedArr = [...sortedSkills].sort((a, b) => {
+		sortSkills(filteredArr);
+	};
+
+	const sortSkills = (arr: SkillType[]) => {
+		const sortedArr = [...arr].sort((a, b) => {
 			if (sort === 'percent') {
 				return b.percent - a.percent; // Sort by percent in descending order
 			}
@@ -30,7 +39,7 @@ const SkillActions = ({ sortedSkills, setSortedSkills }: SkillActionsProps) => {
 			return 0;
 		});
 		setSortedSkills(sortedArr);
-	}, [sort, filter, skillsArr]);
+	};
 
 	return (
 		<div className="skills__actions">
@@ -38,7 +47,7 @@ const SkillActions = ({ sortedSkills, setSortedSkills }: SkillActionsProps) => {
 				<label htmlFor="filter-select">
 					<ListFilter />
 				</label>
-				<select className="skill__action" id="filter-select" onChange={(e) => setSkillActions(e.target.value as SkillCat)} value={filter}>
+				<select className="skill__action" id="filter-select" onChange={(e) => setFilter(e.target.value as SkillCat)} value={filter}>
 					<option value="None">None</option>
 					{skillCategories.map((cat) => (
 						<option key={cat} value={cat}>

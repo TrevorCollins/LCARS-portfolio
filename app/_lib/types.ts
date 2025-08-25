@@ -59,7 +59,7 @@ export type ProjectType = {
 	description: string;
 };
 
-export type SkillCat = 'Coding' | 'Design' | 'Teamwork' | 'Frontend' | 'Backend' | 'Testing';
+export type SkillCat = 'Coding' | 'Design' | 'Teamwork' | 'Frontend' | 'Backend' | 'Testing' | 'None';
 
 export const contactSchema = z.object({
 	name: z.string().nonempty('Name is required'),
