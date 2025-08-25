@@ -35,11 +35,11 @@ export const navLinks: NavLinkType[] = [
 export const navColorClasses: {
 	[color: string]: { bg: string; active: string };
 } = {
-	A: { bg: 'bg-A/100 md:bg-A/80 hover:bg-A/100', active: 'bg-A/100 text-F-50/100 underline' },
-	B: { bg: 'bg-B/100 md:bg-B/80 hover:bg-B/100', active: 'bg-B/100 text-F-50/100 underline' },
-	C: { bg: 'bg-C/100 md:bg-C/80 hover:bg-C/100', active: 'bg-C/100 text-F-50/100 underline' },
-	D: { bg: 'bg-D/100 md:bg-D/80 hover:bg-D/100', active: 'bg-D/100 text-F-50/100 underline' },
-	E: { bg: 'bg-E/100 md:bg-E/80 hover:bg-E/100', active: 'bg-E/100 text-F-50/100 underline' },
+	A: { bg: 'bg-A/100 md:bg-A/80 hover:bg-A/100', active: 'bg-A/100' },
+	B: { bg: 'bg-B/100 md:bg-B/80 hover:bg-B/100', active: 'bg-B/100' },
+	C: { bg: 'bg-C/100 md:bg-C/80 hover:bg-C/100', active: 'bg-C/100' },
+	D: { bg: 'bg-D/100 md:bg-D/80 hover:bg-D/100', active: 'bg-D/100' },
+	E: { bg: 'bg-E/100 md:bg-E/80 hover:bg-E/100', active: 'bg-E/100' },
 };
 
 export const skillsArr: SkillType[] = [

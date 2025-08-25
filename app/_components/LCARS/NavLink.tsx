@@ -4,13 +4,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const NavLink = ({ path, label, color }: NavLinkType) => {
-	const currentPath = usePathname();
-	const isActive = currentPath === path;
-	const spanClasses = isActive ? `active ${navColorClasses[color].active}` : navColorClasses[color].bg;
+	const isActive = usePathname() === path;
 
 	return (
-		<Link className={`nav-link ${isActive ? `${navColorClasses[color].active}` : navColorClasses[color].bg}`} href={path} prefetch>
-			<span className={`nav__arrow hidden md:visible ${spanClasses}`} />
+		<Link className={`nav-link ${isActive ? `active ${navColorClasses[color].active}` : navColorClasses[color].bg}`} href={path} prefetch>
 			{label}
 		</Link>
 	);

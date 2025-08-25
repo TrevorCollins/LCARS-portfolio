@@ -145,7 +145,7 @@
 	--color-D: var(--color-D-200);
 	--color-E: var(--color-E-200);
 	--color-F: var(--color-F-200);
-	--color-white: var(--color-F-100);
+	--color-white: var(--color-F-50);
 	--color-black: var(--color-A-900);
 
 	--color-card-background: lch(from var(--color-F) l c h / 0.5);
@@ -163,25 +163,41 @@
 @utility nav-desktop {
 	@apply left-[0dvw] top-[41dvh] h-[39dvh] w-[9.8dvw] gap-[1dvh];
 	.nav-link {
-		@apply hover:text-F-50/100 h-full grow cursor-pointer text-lg font-bold text-white/80 hover:underline xl:text-2xl;
+		@apply relative h-full grow cursor-pointer text-lg font-bold xl:text-2xl;
+		&::after {
+			@apply border-A-300 absolute -right-4 top-0 z-10 block h-full w-4 transition-all duration-300 will-change-transform content-[''];
+			clip-path: polygon(0 0, 0 50%, 0 100%);
+		}
+		&.active {
+			@apply cursor-default decoration-2;
+			&::after {
+				clip-path: polygon(0 0, 100% 50%, 0 100%);
+				z-index: 50;
+				background-color: inherit;
+			}
+		}
 	}
 }
 
 @utility nav-mobile {
-	@apply absolute left-[3dvw] top-[20dvh] z-50 h-[67dvh] w-[90dvw] -translate-y-[150%] gap-0 overflow-clip font-extrabold uppercase;
+	@apply absolute left-[3dvw] top-[20dvh] z-50 h-0 w-[90dvw] gap-0 overflow-clip font-extrabold uppercase transition-all duration-500;
 	.nav-link {
-		@apply absolute top-[-100%] h-1/5 text-2xl first:rounded-t-2xl last:rounded-b-2xl;
+		@apply absolute top-[-100%] h-1/5 text-2xl text-white/0 first:rounded-t-2xl last:rounded-b-2xl;
 	}
 	&.open {
-		@apply translate-y-0;
+		@apply h-[69dvh];
 		.nav-link {
-			@apply nth-2:top-1/5 nth-3:top-2/5 nth-4:top-3/5 nth-5:top-4/5 first:top-0;
+			@apply nth-2:top-1/5 nth-3:top-2/5 nth-4:top-3/5 nth-5:top-4/5 text-white/70 first:top-0;
 		}
 	}
 }
 
 @utility nav-link {
-	@apply duration-600 relative flex w-full items-center justify-center font-bold text-white/80 transition-all;
+	@apply relative flex w-full items-center justify-center font-bold text-white/70 decoration-0 underline-offset-2 transition-all duration-300;
+	&.active,
+	&:hover {
+		@apply text-white/100 underline decoration-2;
+	}
 }
 
 @utility nav-ham {
@@ -231,20 +247,6 @@ body {
 	}
 	b {
 		@apply font-bold;
-	}
-}
-
-.nav__arrow {
-	position: absolute;
-	top: 0;
-	right: -1rem;
-	width: 1rem;
-	height: 100%;
-	clip-path: polygon(0 0, 0 50%, 0 100%);
-	will-change: clip-path;
-	transition: clip-path 0.3s ease-in-out;
-	&.active {
-		clip-path: polygon(0 0, 100% 50%, 0 100%);
 	}
 }
 
