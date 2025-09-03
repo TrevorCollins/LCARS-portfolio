@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import { electron } from '@/app/_lib/constants';
 import { useIsMobile } from '@/app/_lib/utils';
 
-function Electron({ rotation }: { rotation: [x: number, y: number, z: number] }) {
+function Electron({ rotation, speedMultiplier }: { rotation: [x: number, y: number, z: number]; speedMultiplier: number }) {
 	let { radius, width, trailWidth, length, decay, speed } = electron;
 
 	if (useIsMobile()) {
@@ -14,6 +14,8 @@ function Electron({ rotation }: { rotation: [x: number, y: number, z: number] })
 		trailWidth = trailWidth / 3;
 		length = length * 2;
 	}
+
+	speed = speed * speedMultiplier;
 
 	const ref = useRef<THREE.Mesh>(null!);
 	useFrame((state) => {

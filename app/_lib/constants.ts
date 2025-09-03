@@ -16,12 +16,12 @@ export const bloom: BloomProps = {
 	luminanceSmoothing: 0.5,
 };
 export const electron: ElectronProps = {
-	speed: 4,
+	speed: 3,
 	radius: 2.75,
 	width: 0.25,
-	trailWidth: 3,
-	length: 10,
-	decay: 1.3,
+	trailWidth: 2,
+	length: 6,
+	decay: 0.4,
 };
 
 export const navLinks: NavLinkType[] = [
